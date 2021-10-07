@@ -4,39 +4,35 @@ Course followed by students of Mines St Etienne, ISMIN - M2 Computer Science.
 
 [![Mines St Etienne](./logo.png)](https://www.mines-stetienne.fr/)
 
-# TP5: HTTP Requests
+# TP6: Google Maps
 
 ## 📝 Goal
 
-The goal is to link the app to a Rest API using [Retrofit](https://square.github.io/retrofit/):
-
-You can either use:
- - your own Book Rest API
- - a generic one accessible on: https://bookshelf-gme.cleverapps.io/books
-
-Preparatory work:
-- Copy everything from previous TP (except the README)
+The goal is to discover Google Apis mechanism by displaying a few markers on a map.
 
 First:
-- Add retrofit dependencies (see course slides) to `build.gradle`
-- Add internet permission in `AndroidManifest`
+- Create a new Android project
 
-Then:
-- Create a `BookService` interface
-- Add a `getAllBooks` function with annotations matching the API
-- Create an instance of `retrofit` and instantiate `BookService` with it in `MainActivity`
-- Call `getAllBooks` in the `onCreate` function and display the books returned by the server
+- Login to https://console.cloud.google.com
+- Create a new project
+- Navigate to "API et services" and then "Identifiants"
+- Create a new API Key
+- Add some restriction for this key
 
-- Add a `createBook` function with annotations matching the API
-- Call `createBook` to post a new book to the server and then display the list of books (including the freshly created one)
+Notes: If you don't want to create a Google account as the teacher for a demo API Key
 
-Finally:
-- Add some Toasts to properly display and handle network errors
+Then: 
+- Add a layout to display the map fragment in `activity-main.xml`
+- Instantiate a `SupportMapFragment` in `MainActivity` and display it
+- Make `MainActivity` implements the `OnMapReadyCallback` interface
+- Do not forget to call the `getMapAsync` method on the map fragment
+- Add a marker on Gardanne
+- Move the map to Gardanne
 
-## 🚀 Getting Started
+## 🛰 Extra 
 
- - Start Android Studio
- - Select `Open an existing Android Studio project` and pick this directory
+Use the Android Location API to get the last known location and display it with a custom marker on the map
 
-That's it! You can code!
-
+References:
+  - https://developer.android.com/training/location/permissions
+  - https://developer.android.com/training/location/retrieve-current
