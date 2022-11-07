@@ -1,4 +1,4 @@
-Part of Android Development - ISMIN 2020
+Part of Android Development - ISMIN
 
 Course followed by students of Mines St Etienne, ISMIN - M2 Computer Science.
 
